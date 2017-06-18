@@ -66,4 +66,5 @@ class TarantoolCollector(diamond.collector.Collector):
 
         for metric in metrics:
             self.publish(self.config['host'] + '.' + metric, float(metrics[metric]))
+        c.close()
         return True
