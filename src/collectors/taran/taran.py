@@ -35,7 +35,6 @@ class TarantoolCollector(diamond.collector.Collector):
         return default_config
 
     def collect(self):
-        self.log.error("Started taran collector")
         c = Connection(
             self.config['host'],
             int(self.config['port']),
