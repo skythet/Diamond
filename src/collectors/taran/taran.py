@@ -64,7 +64,6 @@ class TarantoolCollector(diamond.collector.Collector):
             metrics['stat.net.' + item + '.rps'] = stat[item]['rps']
             metrics['stat.net.' + item + '.total'] = stat[item]['total']
 
-        self.log.info(str(metrics))
         for metric in metrics:
             self.publish(self.config['host'] + '.' + metric, float(metrics[metric]))
         return True
