@@ -45,7 +45,7 @@ class TarantoolCollector(diamond.collector.Collector):
 
         runtime_info = c.call('box.runtime.info')[0][0]
         for item in runtime_info:
-            metrics['slab.info.' + item] = runtime_info[item]
+            metrics['runtime.info.' + item] = runtime_info[item]
 
         slab_info = c.call('box.slab.info')[0][0]
         for item in slab_info:
